@@ -1,0 +1,50 @@
+﻿@model IEnumerable<WebApplication1.Models.DatVe>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Quản lý đặt vé</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDCARD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PHONE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDCARD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PHONE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<WebApplication1.Models.ThongTinVe>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Quản lý thông tin vé</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRICE)
+        </th>
+        <th>
+            <p style="font-family:Times New Roman">
+                @Html.DisplayNameFor(model => model.POINT_START)</p>
+        </th>
+        <th>
+            <p style="font-family:Times New Roman">
+                @Html.DisplayNameFor(model => model.POINT_END)</p>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DT_START)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DT_END)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRICE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POINT_START)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POINT_END)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DT_START)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DT_END)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
