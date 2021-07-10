@@ -12,8 +12,27 @@ namespace WebApplication1.Controllers
         public ActionResult Index()
         {
             Connection con = new Connection();
-            List<HangMayBay> list = con.GetALLHMB();
+            List<ThongTinVe> list = con.GetALLTTV();
             return View(list);
+        }
+        public ActionResult CreateKH(int ID)
+        {
+            Connection con = new Connection();
+            ThongTinVe ttv = con.GetThongTinVe(ID);
+            DatVe dv = new DatVe(ttv.CODE);
+            return View(dv);
+        }
+
+        [HttpPost]
+        public ActionResult CreateKH(DatVe dv)
+        {
+            Connection d = new Connection();
+            if (d.insertDV(dv))
+            {
+                return RedirectToAction("Index");
+            }
+            ViewBag.mess = "Update không thành công";
+            return View();
         }
 
         public ActionResult About()

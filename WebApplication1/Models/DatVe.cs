@@ -18,6 +18,13 @@ namespace WebApplication1.Models
             this._idcard = id_card;
             this._phone_kh = phone_h;
         }
+        public DatVe(string code)
+        {
+            this._code_v = code;
+            this._name_kh = "";
+            this._idcard = "";
+            this._phone_kh = "";
+        }
         public int ID 
         {
             get

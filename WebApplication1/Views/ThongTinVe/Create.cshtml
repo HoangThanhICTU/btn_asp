@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ThongTinVe</h4>
+        <h4>Manage ticket information</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -59,7 +59,7 @@
             @Html.LabelFor(model => model.DT_START, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DT_START, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DT_START, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.DT_START, "", new { @class = "datetime-local" })
             </div>
         </div>
 
@@ -67,7 +67,7 @@
             @Html.LabelFor(model => model.DT_END, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DT_END, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DT_END, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.DT_END, "", new { @class = "datetime-local" })
             </div>
         </div>
 

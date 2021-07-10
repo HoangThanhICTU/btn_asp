@@ -43,21 +43,5 @@ namespace WebApplication1.Controllers
             }
             return RedirectToAction("Index");
         }
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Create(DatVe h)
-        {
-            Connection d = new Connection();
-            if (d.insertDV(h))
-            {
-                return RedirectToAction("Index");
-            }
-            ViewBag.mess = "Insert không thành công";
-            return View();
-        }
     }
 }
